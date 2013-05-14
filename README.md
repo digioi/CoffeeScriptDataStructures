@@ -6,4 +6,5 @@ This library was created to aid with creating some basic data structures that wo
 Current Data Structures Implemented:
  - Sorted Arrays
   * Inserts Elements in the order based off sort provided or defaults to Smallest to Largest(numeric comparison)
-
+ - Linked List
+  * creates a doubly linked list for javascript queues and what not.
