@@ -1,10 +1,10 @@
 'use strict'
 class LinkedList
-  constructor: (@currentNode, @headNode, @tailNode)->
-    @length = 0
-  current: ->@currentNode
-  head: -> @currentNode = @headNode
-  tail: -> @currentNode = @tailNode
+  constructor: (@currentNode, @headNode, @tailNode)-> @length = 0
+  getValue: -> @currentNode.getValue()
+  current: -> @currentNode
+  head:    -> @currentNode = @headNode
+  tail:    -> @currentNode = @tailNode
   next: (roundRobin)->
     if @currentNode?.next()?
       @currentNode = @currentNode.next()
@@ -12,6 +12,7 @@ class LinkedList
       @currentNode=@headNode
     else
       throw new Error('Index Out of Bounds')
+
   prev: (roundRobin)->
     if @currentNode?.prev()?
       @currentNode = @currentNode.prev()
@@ -19,8 +20,7 @@ class LinkedList
       @currentNode=@tailNode
     else
       throw new Error('Index Out of Bounds')
-  getValue: ->
-    @currentNode.getValue()
+
   insert: (obj)->
     node = new LinkedNode(obj, @, @tailNode)
     @tailNode.setNext(node) if @tailNode?

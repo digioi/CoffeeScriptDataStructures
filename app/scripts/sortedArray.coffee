@@ -17,7 +17,7 @@ class SortedArray
     @sortCallBack ||= (newElem, currentIndexElement)-> 
       newElem < currentIndexElement
     @__resortArray() if @size() > 0
-
+    
   # @returns Current numbers of objects stored
   size: ->
     @array.length
@@ -84,7 +84,7 @@ class SortedArray
   #__private__#
   __obj_equal: (first, second)->
    JSON.stringify(first) == JSON.stringify(second)
-   
+
   __resortArray: ->
     currentArray = @toArray()
     @array = []
